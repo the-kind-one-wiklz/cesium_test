@@ -1,0 +1,4 @@
+export const CESIUM_CONTAINER_ID = "cesiumContainer";
+export const CESIUM_BASE_URL = "/cesium";
+export const CESIUM_ION_ACCESS_TOKEN =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzOTMxZTg1Yy05MWY5LTRkY2UtYjNmMi1hMDAzNTRjMjA0NTUiLCJpZCI6Mzg0Njg0LCJpYXQiOjE3Njk2NjY0OTh9.qTQWTHhzzpkn11ggkcCGC_wuTJKxQUky230eBdZqZBA";
