@@ -3,7 +3,6 @@ import { FC, useLayoutEffect } from "react";
 import {
   CESIUM_BASE_URL,
   CESIUM_CONTAINER_ID,
-  CESIUM_ION_ACCESS_TOKEN,
 } from "../model/consts";
 import { useCesiumMap } from "@/entities/CesiumMap/model/hooks/useCesiumMap";
 
@@ -15,7 +14,7 @@ export const CesiumMapWidget: FC<CesiumMapWidgetPropsType> = () => {
   useLayoutEffect(() => {
     // The URL on your server where CesiumJS's static files are hosted.
     window.CESIUM_BASE_URL = CESIUM_BASE_URL;
-    initCesium(CESIUM_CONTAINER_ID, CESIUM_ION_ACCESS_TOKEN);
+    initCesium(CESIUM_CONTAINER_ID);
 
     return () => {
       if (cesiumViewer) {
