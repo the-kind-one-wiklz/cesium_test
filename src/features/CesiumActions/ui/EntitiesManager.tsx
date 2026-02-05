@@ -45,7 +45,7 @@ export const EntitiesManager: FC<EntitiesManagerProps> = ({ cesiumViewer }) => {
 
 const goToCoords = () => {
     cesiumViewer.camera.flyTo({
-      destination: Cartesian3.fromDegrees(44.385171, 34.001632, 1),
+      destination: Cartesian3.fromDegrees(44.693312, 34.416457, 1),
       duration: 2,
     });
   }
