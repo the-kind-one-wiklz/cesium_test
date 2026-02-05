@@ -19,12 +19,12 @@ import { terrainProvaiderCallback } from "../utils/terrainProvaiderCallback";
 
 window.CESIUM_BASE_URL = CESIUM_BASE_URL;
 
-// const terrainProvider = new CustomHeightmapTerrainProvider({
-//   width: 256,
-//   height: 256,
-//   tilingScheme: new GeographicTilingScheme(),
-//   callback: terrainProvaiderCallback,
-// });
+const terrainProvider = new CustomHeightmapTerrainProvider({
+  width: 256,
+  height: 256,
+  tilingScheme: new GeographicTilingScheme(),
+  callback: terrainProvaiderCallback,
+});
 
 const osmProvider = new UrlTemplateImageryProvider({
   url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -54,7 +54,7 @@ export const useCesiumMap: UseCesiumMapHookType = () => {
       navigationHelpButton: false,
       navigationInstructionsInitiallyVisible: false,
       animation: false,
-      // terrainProvider,
+      terrainProvider,
     });
 
     // Добавляем подложку

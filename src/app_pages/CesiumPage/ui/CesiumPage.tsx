@@ -3,7 +3,7 @@ import "cesium/Build/Cesium/Widgets/widgets.css";
 
 import { type FC, useLayoutEffect } from "react";
 
-import { useCesiumMap } from "@/entities/CesiumMap";
+import { useCesiumMap, CursorPositionDisplay } from "@/entities/CesiumMap";
 
 import { Header } from "./Header";
 import { CESIUM_CONTAINER_ID } from "../model/consts";
@@ -24,6 +24,7 @@ export const CesiumPage: FC = () => {
   return (
     <section className={styles.section}>
       {cesiumViewer && <Header cesiumViewer={cesiumViewer} />}
+      {cesiumViewer && <CursorPositionDisplay viewer={cesiumViewer} />}
       <div id={CESIUM_CONTAINER_ID} className={styles.mapContainer} />
     </section>
   );

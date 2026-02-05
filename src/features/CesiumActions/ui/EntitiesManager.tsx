@@ -1,6 +1,6 @@
 "use client";
 import { type FC, useState } from "react";
-import type { Viewer } from "cesium";
+import { Cartesian3, type Viewer } from "cesium";
 
 import { RECTANGLE_MOCK, TACTICAL_SIGN_MOCK } from "@/entities/CesiumEntity";
 
@@ -43,11 +43,21 @@ export const EntitiesManager: FC<EntitiesManagerProps> = ({ cesiumViewer }) => {
     close();
   };
 
+const goToCoords = () => {
+    cesiumViewer.camera.flyTo({
+      destination: Cartesian3.fromDegrees(44.385171, 34.001632, 1),
+      duration: 2,
+    });
+  }
+
   return (
     <div className={styles.Container}>
       <button onClick={() => setOpen(!open)}>Объекты карты</button>
       {open && (
         <div className={styles.Buttons}>
+          <button onClick={goToCoords}>
+            Перейти к координатам
+          </button>
           <button onClick={handleAddTacticalSign}>
             Добавить знак
           </button>
