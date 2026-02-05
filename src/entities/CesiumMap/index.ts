@@ -1,1 +1,1 @@
-export { useCesiumMap } from "./model/hooks/useCesiumMap";
+export { useCesiumMap } from './model/hooks/useCesiumMap';

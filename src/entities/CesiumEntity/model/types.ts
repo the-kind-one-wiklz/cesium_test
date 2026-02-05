@@ -38,6 +38,7 @@ export interface CesiumTacticalSignType {
   externalIds?: string[];
   isDeleted: boolean;
   layerId: string;
+  targetCoordinates?: Coordinates[];
   style?: {
     color: string;
     fillColor?: string;

@@ -1,0 +1,14 @@
+.Container {
+    position: relative;
+    z-index: 1;
+}
+
+.Buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background-color: darkblue;
+}
