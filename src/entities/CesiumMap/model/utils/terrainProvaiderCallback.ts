@@ -1,4 +1,4 @@
-import { WebMercatorTilingScheme } from 'cesium';
+import { GeographicTilingScheme, WebMercatorTilingScheme } from 'cesium';
 
 import { TERRAIN_PATH } from '../consts';
 
@@ -25,7 +25,7 @@ export const terrainProvaiderCallback = async (x: number, y: number, level: numb
         terrainData[i] = Math.sin(row * 0.1) * Math.cos(col * 0.1) * 1;
       }
 
-      const rectangle = new WebMercatorTilingScheme().tileXYToNativeRectangle(x, y, level);
+      const rectangle = new GeographicTilingScheme().tileXYToNativeRectangle(x, y, level);
       console.log('LOH ========================================================');
       console.log('LOH долгота с запада:', rectangle.west * (180 / Math.PI));
       console.log('LOH долгота с востока:', rectangle.east * (180 / Math.PI));

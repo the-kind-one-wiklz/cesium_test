@@ -2,6 +2,7 @@
 import { useCallback, useMemo, useState } from "react";
 import {
   CustomHeightmapTerrainProvider,
+  GeographicTilingScheme,
   UrlTemplateImageryProvider,
   Viewer,
   WebMapServiceImageryProvider,
@@ -18,24 +19,24 @@ import { terrainProvaiderCallback } from "../utils/terrainProvaiderCallback";
 
 window.CESIUM_BASE_URL = CESIUM_BASE_URL;
 
-const terrainProvider = new CustomHeightmapTerrainProvider({
-  width: 256,
-  height: 256,
-  tilingScheme: new WebMercatorTilingScheme(),
-  callback: terrainProvaiderCallback,
-});
+// const terrainProvider = new CustomHeightmapTerrainProvider({
+//   width: 256,
+//   height: 256,
+//   tilingScheme: new GeographicTilingScheme(),
+//   callback: terrainProvaiderCallback,
+// });
 
 const osmProvider = new UrlTemplateImageryProvider({
   url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
 });
 
 // WMS Provider для подложки
-const wmsProvider = new WebMapServiceImageryProvider({
-  url: WMS_SERVER_TILES_URL,
-  layers: "ne:Elevation400",
-  parameters: WMS_PARAMETERS,
-  tilingScheme: new WebMercatorTilingScheme(),
-});
+// const wmsProvider = new WebMapServiceImageryProvider({
+//   url: WMS_SERVER_TILES_URL,
+//   layers: "ne:Elevation400",
+//   parameters: WMS_PARAMETERS,
+//   tilingScheme: new WebMercatorTilingScheme(),
+// });
 
 export const useCesiumMap: UseCesiumMapHookType = () => {
   const [cesiumViewer, setCesiumViewer] = useState<Viewer | null>(null);
@@ -53,7 +54,7 @@ export const useCesiumMap: UseCesiumMapHookType = () => {
       navigationHelpButton: false,
       navigationInstructionsInitiallyVisible: false,
       animation: false,
-      terrainProvider,
+      // terrainProvider,
     });
 
     // Добавляем подложку
